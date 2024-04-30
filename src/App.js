@@ -12,6 +12,11 @@ function App() {
 
     // S3 Region
     const REGION = "ap-south-1";
+    AWS.config.update({
+      accessKeyId: process.env.REACT_APP_AWS_ACCESS_KEY,
+      secretAccessKey: process.env.REACT_APP_AWS_SECRET_KEY,
+      region: REGION
+    });
 
     const s3 = new AWS.S3({
       params: { Bucket: S3_BUCKET },
