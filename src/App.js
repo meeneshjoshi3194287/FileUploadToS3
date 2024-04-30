@@ -29,6 +29,8 @@ function App() {
       Bucket: S3_BUCKET,
       Key: file.name,
       Body: file,
+      ContentType : file.type
+      
     };
 
     // Uploading file to s3
